@@ -1,0 +1,79 @@
+<div class="container mt-2">
+  <ng-container *ngIf="clients | async as listClients; else failure">
+    <div class="card">
+      <div class="card-header">Clients</div>
+      <div class="card-body">
+        <div *ngIf="searchFormGroup">
+          <form [formGroup]="searchFormGroup" (ngSubmit)="handlesearchGroup()">
+            <div class="input-group">
+              <label class="input-group-text">Search :</label>
+              <input type="text" formControlName="keyword" class="form-control">
+              <button class="btn btn-info">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Person ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Last Name 1</th>
+            <!--
+            <th>Last Name 2</th>
+            <th>Document Type</th>
+            <th>Document Number</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Country</th>
+            <th>Language</th>
+            <th>Address ID</th>
+            <th>Registration Date</th>
+            -->
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let c of clients | async">
+            <td>{{ c.id_person }}</td>
+            <td>{{ c.numclient }}</td>
+            <td>{{ c.clientname }}</td>
+            <td>{{ c.lastname1 }}</td>
+            <!--
+            <td>{{ c.ape2pers }}</td>
+            <td>{{ c.tipodocu }}</td>
+            <td>{{ c.numedocu }}</td>
+            <td>{{ c.fechnaci }}</td>
+            <td>{{ c.sexo }}</td>
+            <td>{{ c.pais }}</td>
+            <td>{{ c.idioma }}</td>
+            <td>{{ c.id_dpedomi_fk }}</td>
+            <td>{{ c.fechalta }}</td>
+            -->
+            <td>
+              <button (click)="handleDeleteCustomer(c)" class="btn btn-danger">
+                <i class="bi bi-trash"></i>
+              </button>
+            <td>
+            <button (click)="handleUpdateCustomer(c)" class="btn btn-primary">
+              <i class="bi bi-pencil"></i>
+            </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failure>
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading ...
+    </ng-template>
+  </ng-template>
+</div>
