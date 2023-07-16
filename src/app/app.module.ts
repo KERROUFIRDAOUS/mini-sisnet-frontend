@@ -6,18 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ClientsComponent } from './clients/clients.component';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NewClientComponent } from './new-client/new-client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ClientsComponent
+    ClientsComponent,
+    NewClientComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
