@@ -5,76 +5,76 @@
       <form [formGroup]="updateClientFormGroup" (ngSubmit)="handleUpdateClient()">
         <div class="mb-3">
           <label class="form-label">Person ID</label>
-          <input type="text" formControlName="id_person" class="form-control" [value]="client?.id_person">
+          <input type="text" formControlName="id_person" class="form-control" [value]="client.id_person">
         </div>
 
         <div class="mb-3">
           <label class="form-label">First Name:</label>
-          <input type="text" formControlName="numclient" class="form-control" [value]="client?.numclient">
+          <input type="text" formControlName="numclient" class="form-control" [value]="client.numclient">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Last Name:</label>
-          <input type="text" formControlName="clientname" class="form-control" [value]="client?.clientname">
+          <input type="text" formControlName="clientname" class="form-control" [value]="client.clientname">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Last Name 1:</label>
-          <input type="text" formControlName="lastname1" class="form-control" [value]="client?.lastname1">
+          <input type="text" formControlName="lastname1" class="form-control" [value]="client.lastname1">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Last Name 2:</label>
-          <input type="text" formControlName="lastname2" class="form-control" [value]="client?.lastname2">
+          <input type="text" formControlName="lastname2" class="form-control" [value]="client.lastname2">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Document Type:</label>
           <select class="form-control" formControlName="doctype">
             <option value="">Select Document Type</option>
-            <option value="passport" [selected]="client?.doctype === 'passport'">Passport</option>
-            <option value="idcard" [selected]="client?.doctype === 'idcard'">ID Card</option>
-            <option value="driverlicense" [selected]="client?.doctype === 'driverlicense'">Driver's License</option>
+            <option value="passport" [selected]="client.doctype === 'passport'">Passport</option>
+            <option value="idcard" [selected]="client.doctype === 'idcard'">ID Card</option>
+            <option value="driverlicense" [selected]="client.doctype === 'driverlicense'">Driver's License</option>
           </select>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Document Number:</label>
-          <input type="text" formControlName="docnume" class="form-control" [value]="client?.docnume">
+          <input type="text" formControlName="docnume" class="form-control" [value]="client.docnume">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Date of Birth:</label>
-          <input type="text" formControlName="birthdate" class="form-control" [value]="client?.birthdate">
+          <input type="date" formControlName="birthdate" class="form-control" [value]="client.birthdate">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Gender:</label>
           <select class="form-control" formControlName="sexe">
             <option value="">Select Gender</option>
-            <option value="male" [selected]="client?.sexe === 'male'">M</option>
-            <option value="female" [selected]="client?.sexe === 'female'">F</option>
+            <option value="male" [selected]="client.sexe === 'male'">M</option>
+            <option value="female" [selected]="client.sexe === 'female'">F</option>
           </select>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Country:</label>
-          <input type="text" formControlName="country" class="form-control" [value]="client?.country">
+          <input type="text" formControlName="country" class="form-control" [value]="client.country">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Language:</label>
-          <input type="text" formControlName="language" class="form-control" [value]="client?.language">
+          <input type="text" formControlName="language" class="form-control" [value]="client.language">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Address ID:</label>
-          <input type="text" formControlName="id_domicile_fk" class="form-control" [value]="client?.id_domicile_fk">
+          <input type="text" formControlName="id_domicile_fk" class="form-control" [value]="client.id_domicile_fk">
         </div>
 
         <div class="mb-3">
           <label class="form-label">Registration Date:</label>
-          <input type="text" formControlName="entrydate" class="form-control" [value]="client?.entrydate">
+          <input type="date" formControlName="entrydate" class="form-control" [value]="client.entrydate">
         </div>
 
         <button [disabled]="!updateClientFormGroup.valid" class="btn btn-info">Save</button>

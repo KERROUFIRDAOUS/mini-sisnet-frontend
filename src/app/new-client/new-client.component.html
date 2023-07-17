@@ -45,7 +45,7 @@
 
         <div class="mb-3">
           <label class="form-label">Date of Birth:</label>
-          <input type="text" formControlName="birthdate" class="form-control">
+          <input type="date" formControlName="birthdate" class="form-control">
         </div>
 
         <div class="mb-3">
@@ -74,7 +74,7 @@
 
         <div class="mb-3">
           <label class="form-label">Registration Date:</label>
-          <input type="text" formControlName="entrydate" class="form-control">
+          <input type="date" formControlName="entrydate" class="form-control">
         </div>
 
         <button [disabled]="!newClientFormGroup.valid" class="btn btn-info">Save</button>

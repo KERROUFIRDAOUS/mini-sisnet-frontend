@@ -20,15 +20,15 @@ export class NewClientComponent implements OnInit{
       numclient : this.fb.control(null, Validators.required),
       clientname : this.fb.control(null, Validators.required),
       lastname1 : this.fb.control(null, Validators.required),
-      lastname2 : this.fb.control(null),
-      doctype : this.fb.control(null),
-      docnume : this.fb.control(null),
-      birthdate : this.fb.control(null),
-      sexe : this.fb.control(null),
-      country : this.fb.control(null),
-      language : this.fb.control(null),
+      lastname2 : this.fb.control(null, Validators.required),
+      doctype : this.fb.control(null, Validators.required),
+      docnume : this.fb.control(null, Validators.required),
+      birthdate : this.fb.control(null, Validators.required),
+      sexe : this.fb.control(null, Validators.required),
+      country : this.fb.control(null, Validators.required),
+      language : this.fb.control(null, Validators.required),
       id_domicile_fk : this.fb.control(null),
-      entrydate : this.fb.control(null)
+      entrydate : this.fb.control(null, Validators.required)
     })
   }
 

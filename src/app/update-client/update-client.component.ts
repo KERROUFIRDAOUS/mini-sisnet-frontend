@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormGroup, FormControl, FormBuilder} from '@angular/forms';
 import { Client } from '../model/client.model';
 import { ClientService } from '../services/client.service';
 
@@ -17,11 +17,24 @@ export class UpdateClientComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private clientService: ClientService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) {
     this.client = {} as Client;
-    this.updateClientFormGroup = new FormGroup({
-      firstName: new FormControl()
+    this.updateClientFormGroup = this.formBuilder.group({
+      id_person: [this.client?.id_person],
+      numclient: [this.client?.numclient],
+      clientname: [this.client?.clientname],
+      lastname1: [this.client?.lastname1],
+      lastname2: [this.client?.lastname2],
+      doctype: [this.client?.doctype],
+      docnume: [this.client?.docnume],
+      birthdate: [this.client?.birthdate],
+      sexe: [this.client?.sexe],
+      country: [this.client?.country],
+      language: [this.client?.language],
+      id_domicile_fk: [this.client?.id_domicile_fk],
+      entrydate: [this.client?.entrydate],
     });
   }
 
