@@ -19,11 +19,19 @@ export class ClientService {
   }
 
   public deleteClient(id : number):Observable<Client>{
-    return this.http.delete<Client>("http://localhost:8082/demo_war/restapi/client/delete"+id);
+    return this.http.delete<Client>("http://localhost:8082/demo_war/restapi/client/delete/"+id);
   }
 
+  public updateClient(client: Client): Observable<Client> {
+    return this.http.put<Client>(`http://localhost:8082/demo_war/restapi/client/update/${client.id_person}`, client);
+  }
+
+  public getClientById(id: number): Observable<Client> {
+    return this.http.get<Client>("http://localhost:8082/demo_war/restapi/client/get/" + id);
+  }
 
   searchCustomers(kw: any) {
 
   }
+
 }

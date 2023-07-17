@@ -8,13 +8,15 @@ import { ClientsComponent } from './clients/clients.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NewClientComponent } from './new-client/new-client.component';
+import { UpdateClientComponent } from './update-client/update-client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ClientsComponent,
-    NewClientComponent
+    NewClientComponent,
+    UpdateClientComponent
   ],
     imports: [
         BrowserModule,

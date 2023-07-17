@@ -4,6 +4,7 @@ import {ClientService} from "../services/client.service";
 import {catchError, map, Observable, throwError} from "rxjs";
 import {Client} from "../model/client.model";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-clients',
@@ -16,7 +17,7 @@ export class ClientsComponent implements OnInit{
   errorMessage! : string;
   searchFormGroup! : FormGroup | undefined;
 
-  constructor(private clientService : ClientService, private fb: FormBuilder) {
+  constructor(private clientService : ClientService, private fb: FormBuilder, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -56,6 +57,7 @@ export class ClientsComponent implements OnInit{
   }
 
   handleUpdateCustomer(c: Client) {
-
+    this.router.navigate(['/update-client', c.id_person]);
   }
+
 }
